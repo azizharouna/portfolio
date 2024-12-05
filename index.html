@@ -3,36 +3,39 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="./style.css">
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
       <title>Portfolio</title>
     </head>
-    <body>
-      <header>
-        <nav>
-          <ul>
-            <li><a href="#data-science">Data Science</a></li>
-            <li><a href="#cloud-architecture">Cloud Architecture</a></li>
-            <li><a href="#dashboard-portfolio">Dashboard Portfolio</a></li>
+    <body class="bg-gray-100 text-gray-800">
+      <header class="bg-gradient-to-r from-purple-500 to-blue-500 text-white p-8 text-center">
+        <nav class="mb-4">
+          <ul class="flex justify-center space-x-6">
+            <li><a href="#data-science" class="hover:text-yellow-300">Data Science</a></li>
+            <li><a href="#cloud-architecture" class="hover:text-yellow-300">Cloud Architecture</a></li>
+            <li><a href="#dashboard-portfolio" class="hover:text-yellow-300">Dashboard Portfolio</a></li>
           </ul>
         </nav>
-        <h1>Hello World! I'm Abdoul Aziz Moussa 👋</h1>
-        <p>Explore my data science repositories, cloud architecture diagrams, and dashboard portfolio below.  Some sections are still under development.</p>
+        <h1 class="text-4xl font-bold">Hello World! I'm Abdoul Aziz Moussa 👋</h1>
+        <p class="mt-4">Explore my data science repositories, cloud architecture diagrams, and dashboard portfolio below. Some sections are still under development.</p>
       </header>
-      <main>
-        <section id="data-science" class="card">
-          <h2>Data Science Repositories</h2>
-          <p>Coming soon!</p>
-          <span class="under-construction">Under Construction</span>
+      <main class="max-w-4xl mx-auto p-6">
+        <section id="data-science" class="bg-white shadow-md rounded-lg p-6 mb-6 relative">
+          <h2 class="text-2xl font-semibold">Data Science Repositories</h2>
+          <p class="mt-2">Coming soon!</p>
+          <span class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded">Under Construction</span>
+          <img src="https://source.unsplash.com/featured/?data-science" alt="Data Science" class="mt-4 rounded-lg">
         </section>
-        <section id="cloud-architecture" class="card">
-          <h2>Cloud Architecture Diagrams</h2>
-          <p>Coming soon!</p>
-          <span class="under-construction">Under Construction</span>
+        <section id="cloud-architecture" class="bg-white shadow-md rounded-lg p-6 mb-6 relative">
+          <h2 class="text-2xl font-semibold">Cloud Architecture Diagrams</h2>
+          <p class="mt-2">Coming soon!</p>
+          <span class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded">Under Construction</span>
+          <img src="https://source.unsplash.com/featured/?cloud" alt="Cloud Architecture" class="mt-4 rounded-lg">
         </section>
-        <section id="dashboard-portfolio" class="card">
-          <h2>Dashboard Portfolio</h2>
-          <p>Coming soon!</p>
-          <span class="under-construction">Under Construction</span>
+        <section id="dashboard-portfolio" class="bg-white shadow-md rounded-lg p-6 mb-6 relative">
+          <h2 class="text-2xl font-semibold">Dashboard Portfolio</h2>
+          <p class="mt-2">Coming soon!</p>
+          <span class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded">Under Construction</span>
+          <img src="https://source.unsplash.com/featured/?dashboard" alt="Dashboard Portfolio" class="mt-4 rounded-lg">
         </section>
       </main>
     </body>
