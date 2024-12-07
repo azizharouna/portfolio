@@ -40,6 +40,31 @@ Chaque catégorie contiendra plusieurs projets pour illustrer les concepts clés
 
 ---
 
+## Catégorie 3: Edge Computing
+
+Edge computing brings computation and data storage closer to the source of data, reducing latency and bandwidth requirements.  This is particularly useful for applications requiring real-time processing or operating in areas with limited connectivity.
+
+**Benefits:**
+
+* **Reduced Latency:** Processing data closer to the source significantly reduces delays.
+* **Improved Bandwidth Efficiency:** Less data needs to be transmitted to the cloud.
+* **Enhanced Security:** Sensitive data can be processed locally, reducing the risk of breaches.
+* **Offline Functionality:** Applications can continue to function even without a cloud connection.
+
+**Use Cases:**
+
+* **IoT Devices:** Processing data from sensors and actuators on edge devices.
+* **Autonomous Vehicles:** Real-time processing of sensor data for navigation and safety.
+* **Video Surveillance:** Real-time analysis of video feeds for security purposes.
+* **Industrial Automation:** Monitoring and controlling industrial processes in real-time.
+
+**Integration with Cloud Computing:**
+
+Edge computing and cloud computing are often used together in a hybrid architecture.  Edge devices process data locally, while the cloud handles tasks requiring more processing power or storage.  This combination leverages the strengths of both approaches.  For example, edge devices could perform initial data processing and filtering, sending only relevant data to the cloud for further analysis and storage.
+
+
+---
+
 ## Intégration avec d'autres sections du portfolio
 ### Section Data Science :
 - Inclure des notebooks et repositories GitHub.
