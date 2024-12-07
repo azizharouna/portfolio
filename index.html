@@ -1,42 +1,198 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-      <title>Portfolio</title>
-    </head>
-    <body class="bg-gray-100 text-gray-800">
-      <header class="bg-gradient-to-r from-purple-500 to-blue-500 text-white p-8 text-center">
-        <nav class="mb-4">
-          <ul class="flex justify-center space-x-6">
-            <li><a href="#data-science" class="hover:text-yellow-300">Data Science</a></li>
-            <li><a href="#cloud-architecture" class="hover:text-yellow-300">Cloud Architecture</a></li>
-            <li><a href="#dashboard-portfolio" class="hover:text-yellow-300">Dashboard Portfolio</a></li>
-          </ul>
-        </nav>
-        <h1 class="text-4xl font-bold">Hello World! I'm Abdoul Aziz Moussa 👋</h1>
-        <p class="mt-4">Explore my data science repositories, cloud architecture diagrams, and dashboard portfolio below. Some sections are still under development.</p>
-      </header>
-      <main class="max-w-4xl mx-auto p-6">
-        <section id="data-science" class="bg-white shadow-md rounded-lg p-6 mb-6 relative">
-          <h2 class="text-2xl font-semibold">Data Science Repositories</h2>
-          <p class="mt-2">Coming soon!</p>
-          <span class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded">Under Construction</span>
-          <img src="https://source.unsplash.com/featured/?data-science" alt="Data Science" class="mt-4 rounded-lg">
-        </section>
-        <section id="cloud-architecture" class="bg-white shadow-md rounded-lg p-6 mb-6 relative">
-          <h2 class="text-2xl font-semibold">Cloud Architecture Diagrams</h2>
-          <p class="mt-2">Coming soon!</p>
-          <span class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded">Under Construction</span>
-          <img src="https://source.unsplash.com/featured/?cloud" alt="Cloud Architecture" class="mt-4 rounded-lg">
-        </section>
-        <section id="dashboard-portfolio" class="bg-white shadow-md rounded-lg p-6 mb-6 relative">
-          <h2 class="text-2xl font-semibold">Dashboard Portfolio</h2>
-          <p class="mt-2">Coming soon!</p>
-          <span class="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded">Under Construction</span>
-          <img src="https://source.unsplash.com/featured/?dashboard" alt="Dashboard Portfolio" class="mt-4 rounded-lg">
-        </section>
-      </main>
-    </body>
-    </html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+  </head>
+  <body>
+    <header class="bg-primary text-primary-foreground py-8 px-4 md:px-0">
+  <h1 class="text-4xl font-bold text-center">Hello World! I'm Abdoul Aziz Moussa 👋</h1>
+  <p class="mt-4 text-center">Explore my data science repositories, cloud architecture diagrams, and dashboard portfolio below. Some sections are still under development.</p>
+</header>
+<nav class="bg-secondary text-secondary-foreground py-4 shadow-md">
+  <ul class="flex justify-center space-x-6">
+    <li><a href="#data-science" class="hover:text-yellow-300 transition">Data Science</a></li>
+    <li><a href="#cloud-architecture" class="hover:text-yellow-300 transition">Cloud Architecture</a></li>
+    <li><a href="#dashboard-portfolio" class="hover:text-yellow-300 transition">Dashboard Portfolio</a></li>
+  </ul>
+</nav>
+<main class="max-w-6xl mx-auto p-6">
+  <section id="data-science" class="bg-blue-200 text-blue-800 shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-3xl font-semibold text-center text-blue-600">Data Science Repositories</h2>
+    <p class="mt-2 text-center">Explore my data science projects, including notebooks and GitHub repositories.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+      <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
+        <h4 class="font-semibold">NeuroMetrics</h4>
+        <p>An AI-driven platform to predict the UPDRS 3 score for Parkinson's disease.</p>
+        <a href="https://github.com/azizharouna/NeuroMetrics" class="text-blue-500 hover:underline">View on GitHub</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
+        <h4 class="font-semibold">Film Feedback AI</h4>
+        <p>A sentiment analysis project to classify movie reviews.</p>
+        <a href="https://github.com/azizharouna/Film-Feedback-AI" class="text-blue-500 hover:underline">View on GitHub</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
+        <h4 class="font-semibold">PneumoNet</h4>
+        <p>A deep learning project for pneumonia detection from chest X-rays.</p>
+        <a href="https://github.com/azizharouna/PneumoNet" class="text-blue-500 hover:underline">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+  <section id="cloud-architecture" class="bg-green-200 text-green-800 shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-3xl font-semibold text-center text-green-600">Cloud Architecture</h2>
+    <p class="mt-2 text-center">Explore various projects demonstrating cloud architecture capabilities.</p>
+    
+    <h3 class="text-2xl font-semibold mt-4">Local Capabilities</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+        <h4 class="font-semibold">Image Analysis via WebAssembly</h4>
+        <p>Use a lightweight model (MobileNet) for computer vision, executed locally in the browser.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+        <h4 class="font-semibold">Data Processing via Web Workers</h4>
+        <p>Analyze CSV files directly in the browser for efficient multitasking.</p>
+      </div>
+    </div>
+    <h3 class="text-2xl font-semibold mt-4">External Capabilities</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+        <h4 class="font-semibold">Serverless API Deployment</h4>
+        <p>Create an API for text classification using AWS Lambda or Google Cloud Functions.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+        <h4 class="font-semibold">Multi-Service Application</h4>
+        <p>Use Docker microservices orchestrated with Kubernetes.</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+        <h4 class="font-semibold">Machine Learning Pipeline</h4>
+        <p>Host a model via FastAPI or Flask, exposing it through a REST API.</p>
+      </div>
+    </div>
+  </section>
+  <section id="dashboard-portfolio" class="bg-purple-200 text-purple-800 shadow-lg rounded-lg p-6 mb-6">
+    <h2 class="text-3xl font-semibold text-center text-purple-600">Dashboard Portfolio</h2>
+    <p class="mt-2 text-center">Explore my interactive dashboards created with various tools.</p>
+    
+    <h3 class="text-2xl font-semibold mt-4">Interactive Dashboards</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+        <h4 class="font-semibold">Dashboard Project 1</h4>
+        <p>Brief description of the interactive dashboard.</p>
+        <a href="https://github.com/your-dashboard-repo-1" class="text-purple-500 hover:underline">View on GitHub</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+        <h4 class="font-semibold">Dashboard Project 2</h4>
+        <p>Brief description of the interactive dashboard.</p>
+        <a href="https://github.com/your-dashboard-repo-2" class="text-purple-500 hover:underline">View on GitHub</a>
+      </div>
+    </div>
+    <h3 class="text-2xl font-semibold mt-4">Reporting Dashboards</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+        <h4 class="font-semibold">Dashboard Project 3</h4>
+        <p>Brief description of the reporting dashboard.</p>
+        <a href="https://github.com/your-dashboard-repo-3" class="text-purple-500 hover:underline">View on GitHub</a>
+      </div>
+      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+        <h4 class="font-semibold">Dashboard Project 4</h4>
+        <p>Brief description of the reporting dashboard.</p>
+        <a href="https://github.com/your-dashboard-repo-4" class="text-purple-500 hover:underline">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+  </body>
+</html>
