@@ -3,235 +3,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
-		<script type="text/javascript">
-			window.tailwind.config = {
-				darkMode: ['class'],
-				theme: {
-					extend: {
-						colors: {
-							border: 'hsl(var(--border))',
-							input: 'hsl(var(--input))',
-							ring: 'hsl(var(--ring))',
-							background: 'hsl(var(--background))',
-							foreground: 'hsl(var(--foreground))',
-							primary: {
-								DEFAULT: 'hsl(var(--primary))',
-								foreground: 'hsl(var(--primary-foreground))'
-							},
-							secondary: {
-								DEFAULT: 'hsl(var(--secondary))',
-								foreground: 'hsl(var(--secondary-foreground))'
-							},
-							destructive: {
-								DEFAULT: 'hsl(var(--destructive))',
-								foreground: 'hsl(var(--destructive-foreground))'
-							},
-							muted: {
-								DEFAULT: 'hsl(var(--muted))',
-								foreground: 'hsl(var(--muted-foreground))'
-							},
-							accent: {
-								DEFAULT: 'hsl(var(--accent))',
-								foreground: 'hsl(var(--accent-foreground))'
-							},
-							popover: {
-								DEFAULT: 'hsl(var(--popover))',
-								foreground: 'hsl(var(--popover-foreground))'
-							},
-							card: {
-								DEFAULT: 'hsl(var(--card))',
-								foreground: 'hsl(var(--card-foreground))'
-							},
-						},
-					}
-				}
-			}
-		</script>
-		<style type="text/tailwindcss">
-			@layer base {
-				:root {
-					--background: 0 0% 100%;
-					--foreground: 240 10% 3.9%;
-					--card: 0 0% 100%;
-					--card-foreground: 240 10% 3.9%;
-					--popover: 0 0% 100%;
-					--popover-foreground: 240 10% 3.9%;
-					--primary: 240 5.9% 10%;
-					--primary-foreground: 0 0% 98%;
-					--secondary: 240 4.8% 95.9%;
-					--secondary-foreground: 240 5.9% 10%;
-					--muted: 240 4.8% 95.9%;
-					--muted-foreground: 240 3.8% 46.1%;
-					--accent: 240 4.8% 95.9%;
-					--accent-foreground: 240 5.9% 10%;
-					--destructive: 0 84.2% 60.2%;
-					--destructive-foreground: 0 0% 98%;
-					--border: 240 5.9% 90%;
-					--input: 240 5.9% 90%;
-					--ring: 240 5.9% 10%;
-					--radius: 0.5rem;
-				}
-				.dark {
-					--background: 240 10% 3.9%;
-					--foreground: 0 0% 98%;
-					--card: 240 10% 3.9%;
-					--card-foreground: 0 0% 98%;
-					--popover: 240 10% 3.9%;
-					--popover-foreground: 0 0% 98%;
-					--primary: 0 0% 98%;
-					--primary-foreground: 240 5.9% 10%;
-					--secondary: 240 3.7% 15.9%;
-					--secondary-foreground: 0 0% 98%;
-					--muted: 240 3.7% 15.9%;
-					--muted-foreground: 240 5% 64.9%;
-					--accent: 240 3.7% 15.9%;
-					--accent-foreground: 0 0% 98%;
-					--destructive: 0 62.8% 30.6%;
-					--destructive-foreground: 0 0% 98%;
-					--border: 240 3.7% 15.9%;
-					--input: 240 3.7% 15.9%;
-					--ring: 240 4.9% 83.9%;
-				}
-			}
-			.blinking {
-				animation: blinker 1s linear infinite;
-			}
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ['class'],
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))'
+              },
+              secondary: {
+                DEFAULT: 'hsl(var(--secondary))',
+                foreground: 'hsl(var(--secondary-foreground))'
+              },
+              destructive: {
+                DEFAULT: 'hsl(var(--destructive))',
+                foreground: 'hsl(var(--destructive-foreground))'
+              },
+              muted: {
+                DEFAULT: 'hsl(var(--muted))',
+                foreground: 'hsl(var(--muted-foreground))'
+              },
+              accent: {
+                DEFAULT: 'hsl(var(--accent))',
+                foreground: 'hsl(var(--accent-foreground))'
+              },
+              popover: {
+                DEFAULT: 'hsl(var(--popover))',
+                foreground: 'hsl(var(--popover-foreground))'
+              },
+              card: {
+                DEFAULT: 'hsl(var(--card))',
+                foreground: 'hsl(var(--card-foreground))'
+              },
+            },
+          }
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+        }
+        .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --ring: 240 4.9% 83.9%;
+        }
+      }
+      .blinking {
+        animation: blinker 1s linear infinite;
+      }
 
-			@keyframes blinker {
-				50% {
-					opacity: 0;
-				}
-			}
-		</style>
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="bg-primary text-primary-foreground py-8 px-4 md:px-0">
-  <h1 class="text-4xl font-bold text-center">Hello World! I'm Abdoul Aziz Moussa 👋</h1>
-  <p class="mt-4 text-center">Explore my data science repositories, cloud architecture diagrams, and dashboard portfolio below. Some sections are still under development.</p>
-</header>
-<nav class="bg-secondary text-secondary-foreground py-4 shadow-md">
-  <ul class="flex justify-center space-x-6">
-    <li><a href="#data-science" class="hover:text-yellow-300 transition">Data Science</a></li>
-    <li><a href="#cloud-architecture" class="hover:text-yellow-300 transition">Cloud Architecture</a></li>
-    <li><a href="#edge-computing" class="hover:text-yellow-300 transition">Edge Computing</a></li>
-    <li><a href="#dashboard-portfolio" class="hover:text-yellow-300 transition">Dashboard Portfolio</a></li>
-  </ul>
-</nav>
-<main class="max-w-6xl mx-auto p-6">
-  <section id="data-science" class="bg-blue-200 text-blue-800 shadow-lg rounded-lg p-6 mb-6">
-    <h2 class="text-3xl font-semibold text-center text-blue-600">Data Science Repositories</h2>
-    <p class="mt-2 text-center">Explore my data science projects, including notebooks and GitHub repositories.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-      <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
-        <h4 class="font-semibold">NeuroMetrics</h4>
-        <p>An AI-driven platform to predict the UPDRS 3 score for Parkinson's disease.</p>
-        <a href="https://github.com/azizharouna/NeuroMetrics" class="text-blue-500 hover:underline">View on GitHub</a>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
-        <h4 class="font-semibold">Film Feedback AI</h4>
-        <p>A sentiment analysis project to classify movie reviews.</p>
-        <a href="https://github.com/azizharouna/Film-Feedback-AI" class="text-blue-500 hover:underline">View on GitHub</a>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
-        <h4 class="font-semibold">PneumoNet</h4>
-        <p>A deep learning project for pneumonia detection from chest X-rays.</p>
-        <a href="https://github.com/azizharouna/PneumoNet" class="text-blue-500 hover:underline">View on GitHub</a>
-      </div>
-    </div>
-  </section>
+      <h1 class="text-4xl font-bold text-center">Hello World! I'm Abdoul Aziz Moussa 👋</h1>
+      <p class="mt-4 text-center">Explore my data science repositories, cloud architecture diagrams, and dashboard portfolio below. Some sections are still under development.</p>
+    </header>
+    <nav class="bg-secondary text-secondary-foreground py-4 shadow-md">
+      <ul class="flex justify-center space-x-6">
+        <li><a href="#data-science" class="hover:text-yellow-300 transition">Data Science</a></li>
+        <li><a href="#cloud-architecture" class="hover:text-yellow-300 transition">Cloud Architecture</a></li>
+        <li><a href="#edge-computing" class="hover:text-yellow-300 transition">Edge Computing</a></li>
+        <li><a href="#dashboard-portfolio" class="hover:text-yellow-300 transition">Dashboard Portfolio</a></li>
+      </ul>
+    </nav>
+    <main class="max-w-6xl mx-auto p-6">
+      <section id="data-science" class="bg-blue-200 text-blue-800 shadow-lg rounded-lg p-6 mb-6">
+        <h2 class="text-3xl font-semibold text-center text-blue-600">Data Science Repositories</h2>
+        <p class="mt-2 text-center">Explore my data science projects, including notebooks and GitHub repositories.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
+            <h4 class="font-semibold">NeuroMetrics</h4>
+            <p>An AI-driven platform to predict the UPDRS 3 score for Parkinson's disease.</p>
+            <a href="https://github.com/azizharouna/NeuroMetrics" class="text-blue-500 hover:underline">View on GitHub</a>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
+            <h4 class="font-semibold">Film Feedback AI</h4>
+            <p>A sentiment analysis project to classify movie reviews.</p>
+            <a href="https://github.com/azizharouna/Film-Feedback-AI" class="text-blue-500 hover:underline">View on GitHub</a>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-blue-300 transition">
+            <h4 class="font-semibold">PneumoNet</h4>
+            <p>A deep learning project for pneumonia detection from chest X-rays.</p>
+            <a href="https://github.com/azizharouna/PneumoNet" class="text-blue-500 hover:underline">View on GitHub</a>
+          </div>
+        </div>
+      </section>
 
-  <section id="cloud-architecture" class="bg-green-200 text-green-800 shadow-lg rounded-lg p-6 mb-6 relative">
-    <span class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Under Construction</span>
-    <h2 class="text-3xl font-semibold text-center text-green-600">Cloud Architecture</h2>
-    <p class="mt-2 text-center">Explore various projects demonstrating cloud architecture capabilities.</p>
+      <section id="cloud-architecture" class="bg-green-200 text-green-800 shadow-lg rounded-lg p-6 mb-6 relative">
+        <h2 class="text-3xl font-semibold text-center text-green-600">Cloud Architecture</h2>
+        <p class="mt-2 text-center">Explore various projects demonstrating cloud architecture capabilities.</p>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
-        <h4 class="font-semibold">Serverless API Deployment</h4>
-        <p>Create an API for text classification using AWS Lambda or Google Cloud Functions.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
-        <h4 class="font-semibold">Multi-Service Application</h4>
-        <p>Use Docker microservices orchestrated with Kubernetes.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
-        <h4 class="font-semibold">Machine Learning Pipeline</h4>
-        <p>Host a model via FastAPI or Flask, exposing it through a REST API.</p>
-      </div>
-    </div>
-  </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+            <h4 class="font-semibold">Serverless API Deployment</h4>
+            <p>NeuroMetrics is an AI-driven platform designed to predict the UPDRS 3 score (Motor ability deterioration), a crucial metric in the Unified Parkinson's Disease Rating Scale.</p>
+            <a href="api.html" class="text-blue-500 hover:underline">Demo</a>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Beta</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+            <h4 class="font-semibold">Multi-Service Application</h4>
+            <p>Use Docker microservices orchestrated with Kubernetes.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-green-300 transition">
+            <h4 class="font-semibold">Machine Learning Pipeline</h4>
+            <p>Host a model via FastAPI or Flask, exposing it through a REST API.</p>
+          </div>
+        </div>
+      </section>
 
-  <section id="edge-computing" class="bg-orange-200 text-orange-800 shadow-lg rounded-lg p-6 mb-6">
-    <h2 class="text-3xl font-semibold text-center text-orange-600">Edge Computing</h2>
-    <p class="mt-2 text-center">Leveraging the power of edge computing for real-time processing and reduced latency.</p>
-    <p>Edge computing brings computation and data storage closer to the source of data generation, enabling faster processing, reduced latency, and improved bandwidth efficiency.  This is particularly beneficial for applications requiring real-time responses, such as IoT devices, autonomous vehicles, and industrial automation.  When combined with cloud computing, edge computing creates a hybrid architecture that leverages the strengths of both environments.  Edge devices handle immediate processing needs, while the cloud provides scalable storage and processing for larger datasets and complex tasks.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-      <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition relative">
-        <h4 class="font-semibold">Image Analysis via WebAssembly</h4>
-        <p>Use a lightweight model (MobileNet) for computer vision, executed locally in the browser.</p>
-         <a href="Real-Time-Object-Detection-UI.html" class="text-blue-500 hover:underline">Demo</a>
-         <span class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Beta</span>
+      <section id="edge-computing" class="bg-orange-200 text-orange-800 shadow-lg rounded-lg p-6 mb-6">
+        <h2 class="text-3xl font-semibold text-center text-orange-600">Edge Computing</h2>
+        <p class="mt-2 text-center">Leveraging the power of edge computing for real-time processing and reduced latency.</p>
+        <p>Edge computing brings computation and data storage closer to the source of data generation, enabling faster processing, reduced latency, and improved bandwidth efficiency.  This is particularly beneficial for applications requiring real-time responses, such as IoT devices, autonomous vehicles, and industrial automation.  When combined with cloud computing, edge computing creates a hybrid architecture that leverages the strengths of both environments.  Edge devices handle immediate processing needs, while the cloud provides scalable storage and processing for larger datasets and complex tasks.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition relative">
+            <h4 class="font-semibold">Image Analysis via WebAssembly</h4>
+            <p>Use a lightweight model (MobileNet) for computer vision, executed locally in the browser.</p>
+            <a href="Real-Time-Object-Detection-UI.html" class="text-blue-500 hover:underline">Demo</a>
+            <span class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Beta</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition relative">
+            <h4 class="font-semibold">Data Processing via Web Workers</h4>
+            <p>Analyze CSV files directly in the browser for efficient multitasking.</p>
+            <a href="csv-analyzer.html" class="text-blue-500 hover:underline">Demo</a>
+            <span class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Beta</span>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition">
+            <h4 class="font-semibold">Real-time Video Analytics</h4>
+            <p>Process video streams from security cameras at the edge to detect events and trigger alerts immediately, reducing reliance on cloud bandwidth.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition">
+            <h4 class="font-semibold">Industrial IoT Monitoring</h4>
+            <p>Monitor sensor data from industrial equipment at the edge to detect anomalies and prevent equipment failures, enabling proactive maintenance.</p>
+          </div>
+        </div>
+      </section>
 
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition relative">
-        <h4 class="font-semibold">Data Processing via Web Workers</h4>
-        <p>Analyze CSV files directly in the browser for efficient multitasking.</p>
-        <a href="csv-analyzer.html" class="text-blue-500 hover:underline">Demo</a>
-         <span class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Beta</span>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition">
-        <h4 class="font-semibold">Real-time Video Analytics</h4>
-        <p>Process video streams from security cameras at the edge to detect events and trigger alerts immediately, reducing reliance on cloud bandwidth.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-orange-300 transition">
-        <h4 class="font-semibold">Industrial IoT Monitoring</h4>
-        <p>Monitor sensor data from industrial equipment at the edge to detect anomalies and prevent equipment failures, enabling proactive maintenance.</p>
-      </div>
-    </div>
-  </section>
+      <section id="dashboard-portfolio" class="bg-purple-200 text-purple-800 shadow-lg rounded-lg p-6 mb-6 relative">
+        <span class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Under Construction</span>
+        <h2 class="text-3xl font-semibold text-center text-purple-600">Dashboard Portfolio</h2>
+        <p class="mt-2 text-center">Explore my interactive dashboards created with various tools.</p>
 
-  <section id="dashboard-portfolio" class="bg-purple-200 text-purple-800 shadow-lg rounded-lg p-6 mb-6 relative">
-    <span class="absolute top-2 right-2 bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Under Construction</span>
-    <h2 class="text-3xl font-semibold text-center text-purple-600">Dashboard Portfolio</h2>
-    <p class="mt-2 text-center">Explore my interactive dashboards created with various tools.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Sales Performance Dashboard</h4>
-        <p>Visualize sales data with interactive charts and filters.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Website Analytics Dashboard</h4>
-        <p>Track website traffic and user behavior metrics.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Social Media Analytics Dashboard</h4>
-        <p>Monitor social media engagement and follower growth.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Financial Portfolio Tracker</h4>
-        <p>Visualize investment performance and asset allocation.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Customer Churn Analysis</h4>
-        <p>Analyze customer churn rate and identify contributing factors.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Marketing Campaign Performance</h4>
-        <p>Track the effectiveness of marketing campaigns.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Project Management Dashboard</h4>
-        <p>Visualize project progress and resource allocation.</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
-        <h4 class="font-semibold">Sales Forecasting Dashboard</h4>
-        <p>Forecast future sales using historical data and predictive modeling.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Sales Performance Dashboard</h4>
+            <p>Visualize sales data with interactive charts and filters.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Website Analytics Dashboard</h4>
+            <p>Track website traffic and user behavior metrics.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Social Media Analytics Dashboard</h4>
+            <p>Monitor social media engagement and follower growth.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Financial Portfolio Tracker</h4>
+            <p>Visualize investment performance and asset allocation.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Customer Churn Analysis</h4>
+            <p>Analyze customer churn rate and identify contributing factors.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Marketing Campaign Performance</h4>
+            <p>Track the effectiveness of marketing campaigns.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Project Management Dashboard</h4>
+            <p>Visualize project progress and resource allocation.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg hover:bg-purple-300 transition">
+            <h4 class="font-semibold">Sales Forecasting Dashboard</h4>
+            <p>Forecast future sales using historical data and predictive modeling.</p>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
