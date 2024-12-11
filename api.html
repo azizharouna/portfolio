@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abdoul Aziz Moussa - Data Scientist - Cloud Architect</title>
+<style>
+        body {
+            
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+ 
+
+        header {
+        /*background-image: url('static/imh.png');*/
+        background-size: cover;  /* To ensure the image covers the entire header */
+        background-repeat: no-repeat;  /* To prevent the image from repeating */
+        color: white;
+        text-align: center;
+        padding: 2em 0;
+                }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+    margin: 0;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+/* Slideshow styles */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+    
+@media only screen and (max-width: 600px) {
+    nav a {
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+	
+	@media (max-width: 768px) {
+       #nv {
+           
+           line-height: 1.4;
+           word-wrap: break-word;
+		   font-size: 0.8em;
+           
+       }
+   }
+   
+   @media (max-width: 768px) {
+       #instructionMessage {
+           
+           line-height: 1.4;
+           word-wrap: break-word;
+		   font-size: 0.8em;
+           
+       }
+   }
+   
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .card {
+        margin: 10px 0;
+        padding: 15px;
+    }
+    
+    header {
+        padding: 1em 0;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    #neurometrics h2 {
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+		background-repeat;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+
+#neurometrics h2 {
+    font-size: 3.5vw;  # Adjust based on preference
+}
+
+#neurometrics p {
+    font-size: 2vw;    # Adjust based on preference
+}
+
+
+@media (max-width: 768px) {
+    #neurometrics.container.card {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+}
+
+#claireAvatar {
+    width: 100px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#chatbotInterface {
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    bottom: 10px;
+    right: 130px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: none; /* initially hidden */
+}
+
+#chatMessages {
+    height: 340px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#userInput {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+button {
+    width: 20%;
+    border: none;
+    border-top: 1px solid #ddd;
+    background-color: #0099ff;
+    color: white;
+    cursor: pointer;
+}
+
+#chatBanner {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    background-color: #0099ff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0 0 20px #0099ff, 0 0 30px #0099ff, 0 0 40px #0099ff;
+    animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+    from {
+        box-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #0099ff;
+    }
+    to {
+        box-shadow: 0 0 20px #0099ff, 0 0 30px #0099ff, 0 0 40px #0099ff;
+    }
+}
+
+@media (max-width: 600px) {
+    #claireAvatar {
+        width: 80px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    #chatbotInterface {
+        width: 90%;
+        height: 300px;
+        bottom: 5px;
+        right: 5%;
+    }
+
+    #chatMessages {
+        height: 240px;
+    }
+
+    #userInput {
+        width: 70%;
+    }
+
+    button {
+        width: 28%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-repeat: repeat;
+    }
+}
+
+@media (max-width: 600px) {
+    #nv, #instructionMessage {
+        font-size: 18px;  # Adjust this value if needed
+    }
+}
+
+@media (max-width: 600px) {
+    #nv, #instructionMessage {
+        font-size: inherit;
+    }
+}
+
+@media (min-width: 601px) {
+    #chatBanner {
+        bottom: 120px;  # Adjust this value to position the chat banner appropriately on desktop
+        right: 60px;   # Adjust this value to position the chat banner appropriately on desktop
+    }
+}
+</style>
+<style>
+#neurometrics {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 50%;  /* or any other value */;
+	                                          /*background-image: url('datacenter.png');*/
+	 background-repeat: no-repeat;
+	 background-color: #333;
+	 
+        text-align: center;
+}
+
+#neurometrics form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	color: white;
+}
+
+#neurometrics h2 {
+   color: white;
+    margin-bottom: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 50%;  /* or any other value */
+}
+
+#neurometrics p { 
+color: white;
+    text-align: center;
+    margin-top: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 50%;  /* or any other value */
+}
+
+#neurometrics d { 
+color: white;
+    text-align: center;
+    margin-top: 20px;
+	margin-left: auto;
+    margin-right: auto;
+    width: 50%;  /* or any other value */
+}
+
+@media only screen and (max-width: 600px) {
+    nav a {
+        padding: 10px 15px;
+        font-size: 0.8em;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .card {
+        margin: 10px 0;
+        padding: 15px;
+    }
+    
+    header {
+        padding: 1em 0;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    #neurometrics h2 {
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-size: cover;
+        background-position: center center;
+		
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+
+#neurometrics h2 {
+    font-size: 3.5vw;  # Adjust based on preference
+}
+
+#neurometrics p {
+    font-size: 1.3vw;    # Adjust based on preference
+}
+
+#neurometrics d {
+    font-size: 1.3vw;    # Adjust based on preference
+}
+
+#result {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    #neurometrics.container.card {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+}
+
+#claireAvatar {
+    width: 100px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#chatbotInterface {
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    bottom: 10px;
+    right: 130px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: none; /* initially hidden */
+}
+
+#chatMessages {
+    height: 340px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#userInput {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+button {
+    width: 20%;
+    border: none;
+    border-top: 1px solid #ddd;
+    background-color: #0099ff;
+    color: white;
+    cursor: pointer;
+}
+
+#chatBanner {
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    background-color: #0099ff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0 0 20px #0099ff, 0 0 30px #0099ff, 0 0 40px #0099ff;
+    animation: glowAnimation 1.5s infinite alternate;
+}
+
+@keyframes glowAnimation {
+    from {
+        box-shadow: 0 0 5px #0099ff, 0 0 10px #0099ff, 0 0 15px #0099ff;
+    }
+    to {
+        box-shadow: 0 0 20px #0099ff, 0 0 30px #0099ff, 0 0 40px #0099ff;
+    }
+}
+
+@media (max-width: 600px) {
+    #claireAvatar {
+        width: 80px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    #chatbotInterface {
+        width: 90%;
+        height: 300px;
+        bottom: 5px;
+        right: 5%;
+    }
+
+    #chatMessages {
+        height: 240px;
+    }
+
+    #userInput {
+        width: 70%;
+    }
+
+    button {
+        width: 28%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        background-repeat: repeat;
+    }
+}
+
+@media (max-width: 600px) {
+    #nv, #instructionMessage {
+        font-size: 18px;  # Adjust this value if needed
+    }
+}
+
+@media (max-width: 600px) {
+    #nv, #instructionMessage {
+        font-size: inherit;
+    }
+}
+
+@media (min-width: 601px) {
+    #chatBanner {
+        bottom: 120px;  # Adjust this value to position the chat banner appropriately on desktop
+        right: 60px;   # Adjust this value to position the chat banner appropriately on desktop
+    }
+}
+</style><style>
+body {
+    overflow: hidden;
+}
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background: url('static/ib.png') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
+}
+</style></head>
+<body><video autoplay loop muted id="background-video">
+    <source src="static/ib.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<header>
+<h1>Abdoul Aziz Moussa</h1>
+<p>Data Scientist - Cloud Architect</p>
+</header>
+<nav>
+
+<a href="index.html">About</a>
+        <a href="https://github.com/azizharouna">Repositories</a>
+		<a href="api.html">App/API</a>
+		<a href="index.html">Contact</a></nav>
+</nav>
+
+
+
+<section class="container card" id="neurometrics">
+<h2>NeuroMetrics</h2><img alt="Data Center" src="static/datacenter.png" style="max-width: 15%; margin-top: 10px; "/>
+<p id="nv">This solution is for demonstrative purposes only. It is not for clinical use and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+   <p id="instructionMessage" >Enter the required features to predict Parkinson's disease treatment progression:</p>
+   <img id="loadingGif" src="static/loading.gif" alt="Loading..." style="max-width: 15%; margin-top: 10px; display: none;">
+<form id="predictionForm" style="display: block;">
+
+
+        Time Since Diagnosis (Nbr months ago): <input id="time_since_diagnosis" min="1" type="number" required /><br/><br/>
+        Current UPDRS 1 scale : <input id="updrs_1" max="260" min="1" type="number" required /><br/><br/>
+        Current UPDRS 2 scale: <input id="updrs_2" max="260" min="1" type="number" required /><br/><br/>
+        Current UPDRS 4 scale: <input id="updrs_4" max="260" min="1" type="number" required /><br/><br/>
+		Protein Measured: <select id="UniProt" required ><option value="O00391">O00391</option><option value="O00533">O00533</option><option value="O00584">O00584</option><option value="O14498">O14498</option><option value="O14773">O14773</option><option value="O14791">O14791</option><option value="O15240">O15240</option><option value="O15394">O15394</option><option value="O43505">O43505</option><option value="O60888">O60888</option><option value="O75144">O75144</option><option value="O75326">O75326</option><option value="P02792">P02792</option><option value="Q13449">Q13449</option><option value="Q99683">Q99683</option><option value="P60174">P60174</option><option value="Q99829">Q99829</option><option value="Q9UKV8">Q9UKV8</option><option value="P32754">P32754</option><option value="P01594">P01594</option></select><br/><br/>
+		Value of Protein expression (NPX): </label><input id="NPX" max="613851000" min="0" type="number" required /><br/><br/>
+		Medication State: <select id="upd23b_clinical_state_on_medication">
+		<option value="ON">ON</option>
+		<option value="OFF">OFF</option>
+		</select><br/><br/>
+<input type="submit" value="Predict"/>
+</form>
+
+<p id="result"></p>
+<button id="backToAnalysis" style="display: none;">Back to Analysis</button>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    
+    
+    document.getElementById('predictionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+		document.getElementById('loadingGif').style.display = 'block';
+		document.getElementById('predictionForm').style.display = "none";
+		document.getElementById('instructionMessage').style.display = 'none';
+        
+        let data = {
+            time_since_diagnosis: parseFloat(document.getElementById('time_since_diagnosis').value),
+            updrs_1: parseFloat(document.getElementById('updrs_1').value),
+            updrs_2: parseFloat(document.getElementById('updrs_2').value),
+            updrs_4: parseFloat(document.getElementById('updrs_4').value),
+            UniProt: document.getElementById('UniProt').value,
+            NPX: parseFloat(document.getElementById('NPX').value),
+            upd23b_clinical_state_on_medication: document.getElementById('upd23b_clinical_state_on_medication').value
+        };  
+
+        fetch('https://405f3rqtz1.execute-api.eu-west-3.amazonaws.com/init/somepath', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+		 // Introduce a delay of 2 seconds using setTimeout
+        setTimeout(() => {
+            // Hide the loading GIF after the delay
+            document.getElementById('loadingGif').style.display = 'none';
+
+            document.getElementById('result').textContent = "Predicted UPDRS 3 Score: " + data.score + ". " + data.comment;
+            document.getElementById('predictionForm').style.display = "none";
+			document.getElementById('instructionMessage').style.display = 'none';
+            document.getElementById('backToAnalysis').style.display = "block";
+        }, 5000); // 2000 milliseconds = 2 seconds
+    })
+        .catch(error => {
+		    document.getElementById('loadingGif').style.display = 'none';
+            console.error('Error:', error);
+        });
+    });
+
+    document.getElementById('backToAnalysis').addEventListener('click', function() {
+        document.getElementById('result').textContent = "";
+        document.getElementById('backToAnalysis').style.display = "none";
+        document.getElementById('predictionForm').style.display = "block";
+		document.getElementById('nv').style.display = "block";
+		document.getElementById('instructionMessage').style.display = 'none';
+
+    });
+
+});
+</script>
+
+
+<div id="chatBanner">Chat</div>
+<video id="claireAvatar" autoplay loop muted><source src="static/claire.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+<div id="chatbotInterface">
+    <div id="chatMessages"></div>
+    <input type="text" id="userInput" placeholder="Ask Claire...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage() {
+    var input = document.getElementById('userInput').value;
+    var messagesDiv = document.getElementById('chatMessages');
+    messagesDiv.innerHTML += `<p>User: ${input}</p>`;
+
+    // Replace with your API Gateway URL
+    var apiEndpoint = 'https://yzcy0urfrb.execute-api.eu-west-3.amazonaws.com/prod/questions';
+
+    fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ input_text: input })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        messagesDiv.innerHTML += `<p>Claire: ${data.response}</p>`;
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        messagesDiv.innerHTML += `<p>Claire: I'm having trouble understanding right now. Please try again later.</p>`;
+    });
+
+    // Auto scroll to the bottom of the chat
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+document.getElementById('claireAvatar').onclick = function() {
+    var chatInterface = document.getElementById('chatbotInterface');
+    chatInterface.style.display = chatInterface.style.display === "block" ? "none" : "block";
+}
+
+document.getElementById('chatBanner').onclick = function() {
+    var chatInterface = document.getElementById('chatbotInterface');
+    chatInterface.style.display = "block";
+}
+
+document.addEventListener('click', function(event) {
+    var chatInterface = document.getElementById('chatbotInterface');
+    var claireAvatar = document.getElementById('claireAvatar');
+    var isClickInside = chatInterface.contains(event.target) || claireAvatar.contains(event.target);
+
+    if (!isClickInside && chatInterface.style.display === "block") {
+        chatInterface.style.display = "none";
+    }
+});
+
+
+</script>
+
+
+
+<script>
+    const apiEndpoint = 'https://yzcy0urfrb.execute-api.eu-west-3.amazonaws.com/prod/questions';
+
+    function updateChatbox(message, isUser = false) {
+        const chatMessages = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.textContent = isUser ? `User: ${message}` : `Claire: ${message}`;
+        messageDiv.style.textAlign = isUser ? 'right' : 'left';
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+    }
+
+    function sendMessage() {
+        const userInput = document.getElementById('userInput').value;
+        if (!userInput.trim()) return; // Don't send an empty message
+
+        // Update the chatbox with the user message
+        updateChatbox(userInput, true);
+
+        // Prepare the data to send to the API
+        const data = JSON.stringify({ input_text: userInput });
+
+        // Use Fetch API to send the data
+        fetch(apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: data,
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Display the response
+            updateChatbox(data.response);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            updateChatbox("I'm having trouble understanding right now. Please try again later.");
+        });
+
+        // Clear the input after sending
+        document.getElementById('userInput').value = '';
+    }
+
+    // Add an event listener to detect the Enter key press
+    document.getElementById('userInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            sendMessage();
+        }
+    });
+</script>
+
+</body></html>
+
+
+
+
+
+
