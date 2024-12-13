@@ -14,7 +14,6 @@
             background-attachment: fixed;
         }
         
- 
 
         header {
         /*background-image: url('static/imh.png');*/
@@ -99,7 +98,7 @@
            
            line-height: 1.4;
            word-wrap: break-word;
-		   font-size: 0.8em;
+ 		   font-size: 0.8em;
            
        }
    }
@@ -109,11 +108,11 @@
            
            line-height: 1.4;
            word-wrap: break-word;
-		   font-size: 0.8em;
+ 		   font-size: 0.8em;
            
        }
    }
-   
+    
     
     .container {
         padding: 0 10px;
@@ -536,7 +535,8 @@ button {
         right: 60px;   /* Adjust this value to position the chat banner appropriately on desktop */
     }
 }
-</style><style>
+</style>
+<style>
 /* Removed overflow: hidden from body to allow scrolling */
 #background-video {
     position: fixed;
@@ -577,7 +577,6 @@ button {
    <p id="instructionMessage" >Enter the required features to predict Parkinson's disease treatment progression:</p>
    <img id="loadingGif" src="static/loading.gif" alt="Loading..." style="max-width: 15%; margin-top: 10px; display: none;">
 <form id="predictionForm" style="display: block;">
-
 
         Time Since Diagnosis (Nbr months ago): <input id="time_since_diagnosis" min="1" type="number" required /><br/><br/>
         Current UPDRS 1 scale : <input id="updrs_1" max="260" min="1" type="number" required /><br/><br/>
@@ -669,8 +668,8 @@ function sendMessage() {
     var messagesDiv = document.getElementById('chatMessages');
     messagesDiv.innerHTML += `<p>User: ${input}</p>`;
 
-    // Replace with your API Gateway URL
-    var apiEndpoint = 'https://yzcy0urfrb.execute-api.eu-west-3.amazonaws.com/prod/questions';
+    // Update the API endpoint to the new backend
+    var apiEndpoint = '/api/chat';
 
     fetch(apiEndpoint, {
         method: 'POST',
@@ -723,7 +722,7 @@ document.addEventListener('click', function(event) {
 
 
 <script>
-    const apiEndpoint = 'https://yzcy0urfrb.execute-api.eu-west-3.amazonaws.com/prod/questions';
+    const apiEndpoint = '/api/chat';
 
     function updateChatbox(message, isUser = false) {
         const chatMessages = document.getElementById('chatMessages');
