@@ -25,10 +25,59 @@
       <p class="text-lg mb-8 text-center">
         This tool will allow you to upload and analyze CSV files using Web Workers for efficient processing.
       </p>
-      <input type="file" accept=".csv" class="mb-4 p-2 rounded" />
-      <button class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">Upload CSV</button>
+      <input type="file" id="csvFileInput" accept=".csv" class="mb-4 p-2 rounded" />
+      <button id="uploadButton" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">Upload CSV</button>
       <span class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Under Construction</span>
+      <div id="output" class="mt-4 text-center"></div>
+
+      <div class="use-cases mt-8">
+        <h2>Business Use Cases</h2>
+        <ul>
+          <li><strong>Data Analysis:</strong> Quickly process and analyze large datasets for insights.</li>
+          <li><strong>Financial Reporting:</strong> Automate the generation of financial reports from CSV data.</li>
+          <li><strong>Market Research:</strong> Analyze survey results and market data efficiently.</li>
+          <li><strong>Inventory Management:</strong> Track and manage inventory levels using CSV exports.</li>
+          <li><strong>Customer Insights:</strong> Analyze customer data to improve service and products.</li>
+        </ul>
+      </div>
+
+      <div class="limitations mt-8">
+        <h2>Limitations</h2>
+        <ul>
+          <li><strong>File Size:</strong> Large CSV files may take longer to process and could impact performance.</li>
+          <li><strong>Data Quality:</strong> Inaccurate or incomplete data in CSV files can lead to incorrect analysis.</li>
+          <li><strong>Complexity:</strong> Complex data relationships may not be easily represented in CSV format.</li>
+          <li><strong>Security:</strong> Handling sensitive data in CSV files requires careful security considerations.</li>
+          <li><strong>Browser Limitations:</strong> The performance of the CSV Analyzer may vary across different browsers.</li>
+        </ul>
+      </div>
     </div>
+
+    <script>
+      document.getElementById('uploadButton').addEventListener('click', function() {
+        const fileInput = document.getElementById('csvFileInput');
+        const file = fileInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(event) {
+            const csvData = event.target.result;
+            analyzeCSV(csvData);
+          };
+          reader.readAsText(file);
+        } else {
+          alert('Please select a CSV file to upload.');
+        }
+      });
+
+      function analyzeCSV(data) {
+        const rows = data.split('\\n');
+        const output = document.getElementById('output');
+        output.innerHTML = '<h2 class="text-2xl font-bold mb-4">CSV Analysis Result</h2>';
+        rows.forEach((row, index) => {
+          const columns = row.split(',');
+          output.innerHTML += '<p>Row ' + (index + 1) + ': ' + columns.join(' | ') + '</p>';
+        });
+      }
+    </script>
   </body>
 </html>
-</write_to_file>
