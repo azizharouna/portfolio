@@ -5,6 +5,68 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
     <link rel="stylesheet" href="static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.querySelector('input[type="file"]');
+        const uploadButton = document.querySelector('.button');
+        const videoElement = document.createElement('video');
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+
+        uploadButton.addEventListener('click', async function() {
+          const file = fileInput.files[0];
+          if (file) {
+            alert('Processing video: ' + file.name);
+            
+            // Load the MobileNet model
+            try {
+              const model = await mobilenet.load();
+              console.log('Model loaded successfully!'); // Confirm model loading
+            } catch (error) {
+              console.error('Error loading model:', error);
+              alert('Failed to load the model. Check the console for details.');
+              return;
+            }
+
+            // Set up video element
+            videoElement.src = URL.createObjectURL(file);
+            videoElement.controls = true; // Add controls to the video
+            videoElement.style.width = '100%'; // Make video responsive
+            document.getElementById('videoContainer').appendChild(videoElement);
+            videoElement.play();
+
+            // Process video frames
+            videoElement.addEventListener('loadeddata', async () => {
+              canvas.width = videoElement.videoWidth;
+              canvas.height = videoElement.videoHeight;
+              document.body.appendChild(canvas); // Append canvas to body
+              console.log(`Canvas dimensions: ${canvas.width}x${canvas.height}`); // Log canvas dimensions
+
+              while (videoElement.paused === false && videoElement.ended === false) {
+                context.drawImage(videoElement, 0, 0);
+                const predictions = await model.classify(canvas);
+                
+                // Debugging: Log predictions to console
+                console.log('Predictions:', predictions);
+
+                // Draw predictions on canvas
+                predictions.forEach(prediction => {
+                  context.fillStyle = 'red';
+                  context.font = '16px Arial';
+                  context.fillText(`${prediction.className}: ${Math.round(prediction.probability * 100)}%`, 10, 20);
+                });
+
+                await new Promise(requestAnimationFrame); // Wait for the next frame
+              }
+            });
+          } else {
+            alert('Please select a video file to upload.');
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <header class="bg-primary text-primary-foreground py-8 px-4 md:px-0">
@@ -25,9 +87,27 @@
       <p class="text-lg mb-8 text-center">
         This tool will allow you to upload a video and perform real-time object detection using a MobileNet model via WebAssembly.
       </p>
-      <input type="file" accept="video/*" class="mb-4 p-2 rounded" />
-      <button class="button">Upload Video</button> <!-- Updated button class -->
-      <span class="absolute top-0 right-0 bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded blinking">Under Construction</span>
+      
+      <div class="upload-container" style="display: flex; flex-direction: column; align-items: center;">
+        <input type="file" accept="video/*" class="mb-4 p-2 rounded" />
+        <button class="button">Upload Video</button>
+        <div id="videoContainer" class="video-container" style="margin-top: 20px; width: 100%; max-width: 600px;">
+          <video id="videoElement" controls style="width: 100%;"></video>
+        </div>
+      </div>
+
+      <div class="use-cases">
+        <h2>Business Use Cases</h2>
+        <ul>
+          <li><strong>Surveillance and Security:</strong> Monitor video feeds for unauthorized access.</li>
+          <li><strong>Retail Analytics:</strong> Analyze customer behavior and optimize store layouts.</li>
+          <li><strong>Traffic Monitoring:</strong> Monitor traffic flow and detect accidents.</li>
+          <li><strong>Healthcare:</strong> Monitor patients and detect falls in care facilities.</li>
+          <li><strong>Sports Analysis:</strong> Analyze player movements and strategies.</li>
+          <li><strong>Autonomous Vehicles:</strong> Detect and respond to objects in the environment.</li>
+          <li><strong>Augmented Reality:</strong> Integrate with AR experiences for interactive applications.</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
