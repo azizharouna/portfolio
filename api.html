@@ -56,9 +56,8 @@
             margin: 20px 0;
             box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
         }
-
         
-.fade {
+.fader {
     animation-name: fade;
     animation-duration: 1.5s;
     margin: 0;
@@ -112,8 +111,8 @@
            
        }
    }
-    
-    
+	
+	
     .container {
         padding: 0 10px;
     }
@@ -128,13 +127,11 @@
     }
 }
 
-
 @media only screen and (max-width: 600px) {
     #neurometrics h2 {
         text-align: center;
     }
 }
-
 
 @media only screen and (max-width: 600px) {
     body {
@@ -144,13 +141,11 @@
     }
 }
 
-
 @media only screen and (max-width: 600px) {
     body {
         background-attachment: scroll;
     }
 }
-
 
 #neurometrics h2 {
     font-size: 3.5vw;  /* Adjust based on preference */
@@ -159,7 +154,6 @@
 #neurometrics p {
     font-size: 2vw;    /* Adjust based on preference */
 }
-
 
 @media (max-width: 768px) {
     #neurometrics.container.card {
@@ -377,7 +371,7 @@ color: white;
     body {
         background-size: cover;
         background-position: center center;
-		
+		background-repeat: no-repeat;
     }
 }
 
@@ -615,7 +609,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             upd23b_clinical_state_on_medication: document.getElementById('upd23b_clinical_state_on_medication').value
         };  
 
-        fetch('https://405f3rqtz1.execute-api.eu-west-3.amazonaws.com/init/somepath', {
+        fetch('/api/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -624,7 +618,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         })
         .then(response => response.json())
         .then(data => {
-		 // Introduce a delay of 2 seconds using setTimeout
+		 // Introduce a delay of 5 seconds using setTimeout
         setTimeout(() => {
             // Hide the loading GIF after the delay
             document.getElementById('loadingGif').style.display = 'none';
@@ -633,7 +627,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('predictionForm').style.display = "none";
 			document.getElementById('instructionMessage').style.display = 'none';
             document.getElementById('backToAnalysis').style.display = "block";
-        }, 5000); // 2000 milliseconds = 2 seconds
+        }, 5000); // 5000 milliseconds = 5 seconds
     })
         .catch(error => {
 			document.getElementById('loadingGif').style.display = 'none';
@@ -676,7 +670,7 @@ function sendMessage() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: input }) <!-- Changed 'input_text' to 'message' -->
+        body: JSON.stringify({ message: input }) // Changed 'input_text' to 'message'
     })
     .then(response => {
         if (!response.ok) {
@@ -741,7 +735,7 @@ document.addEventListener('click', function(event) {
         updateChatbox(userInput, true);
 
         // Prepare the data to send to the API
-        const data = JSON.stringify({ message: userInput }); <!-- Changed 'input_text' to 'message' -->
+        const data = JSON.stringify({ message: userInput }); // Changed 'input_text' to 'message'
 
         // Use Fetch API to send the data
         fetch(apiEndpoint, {
