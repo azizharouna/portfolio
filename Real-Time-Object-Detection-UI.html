@@ -1,29 +1,58 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Object Detection</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
     <link rel="stylesheet" href="static/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <style>
+      /* Ensure videoContainer is positioned relatively */
+      #videoContainer {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        margin-top: 20px;
+      }
+      /* Position canvas absolutely over the video */
+      #overlayCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+      }
+      /* Ensure video takes full width of container */
+      #videoElement {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         const fileInput = document.querySelector('input[type="file"]');
         const uploadButton = document.querySelector('.button');
-        const videoElement = document.createElement('video');
-        const canvas = document.createElement('canvas');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoElement = document.getElementById('videoElement');
+        const canvas = document.getElementById('overlayCanvas');
         const context = canvas.getContext('2d');
+        let model; // Declare model variable in the outer scope
 
         uploadButton.addEventListener('click', async function() {
           const file = fileInput.files[0];
           if (file) {
             alert('Processing video: ' + file.name);
             
-            // Load the MobileNet model
+            // Load the COCO-SSD model
             try {
-              const model = await mobilenet.load();
-              console.log('Model loaded successfully!'); // Confirm model loading
+              model = await cocoSsd.load();
+              alert('Model loaded successfully!');
+              console.log('Model loaded successfully!');
             } catch (error) {
               console.error('Error loading model:', error);
               alert('Failed to load the model. Check the console for details.');
@@ -33,33 +62,43 @@
             // Set up video element
             videoElement.src = URL.createObjectURL(file);
             videoElement.controls = true; // Add controls to the video
-            videoElement.style.width = '100%'; // Make video responsive
-            document.getElementById('videoContainer').appendChild(videoElement);
             videoElement.play();
 
-            // Process video frames
-            videoElement.addEventListener('loadeddata', async () => {
+            // Adjust canvas size based on video dimensions once metadata is loaded
+            videoElement.addEventListener('loadedmetadata', () => {
               canvas.width = videoElement.videoWidth;
               canvas.height = videoElement.videoHeight;
-              document.body.appendChild(canvas); // Append canvas to body
-              console.log(`Canvas dimensions: ${canvas.width}x${canvas.height}`); // Log canvas dimensions
+            });
 
-              while (videoElement.paused === false && videoElement.ended === false) {
-                context.drawImage(videoElement, 0, 0);
-                const predictions = await model.classify(canvas);
-                
-                // Debugging: Log predictions to console
-                console.log('Predictions:', predictions);
-
-                // Draw predictions on canvas
+            // Process video frames
+            videoElement.addEventListener('playing', async () => {
+              async function detectFrame() {
+                if (videoElement.paused || videoElement.ended) {
+                  return;
+                }
+                const predictions = await model.detect(videoElement);
+                context.clearRect(0, 0, canvas.width, canvas.height);
                 predictions.forEach(prediction => {
+                  // Draw bounding box
+                  context.strokeStyle = 'red';
+                  context.lineWidth = 2;
+                  context.strokeRect(...prediction.bbox);
+                  
+                  // Draw label background
                   context.fillStyle = 'red';
-                  context.font = '16px Arial';
-                  context.fillText(`${prediction.className}: ${Math.round(prediction.probability * 100)}%`, 10, 20);
-                });
+                  const textWidth = context.measureText(prediction.class).width;
+                  const textHeight = 16; // Font size
 
-                await new Promise(requestAnimationFrame); // Wait for the next frame
+                  context.fillRect(prediction.bbox[0], prediction.bbox[1] - textHeight, textWidth + 10, textHeight);
+
+                  // Draw text
+                  context.fillStyle = 'white';
+                  context.font = '16px Arial';
+                  context.fillText(prediction.class, prediction.bbox[0] + 5, prediction.bbox[1] - 5);
+                });
+                requestAnimationFrame(detectFrame);
               }
+              detectFrame();
             });
           } else {
             alert('Please select a video file to upload.');
@@ -82,17 +121,18 @@
       </ul>
     </nav>
 
-    <div class="bg-gradient-to-br from-purple-500 to-pink-700 text-white min-h-screen flex flex-col items-center justify-center p-6">
+    <div class="bg-gradient-to-br from-purple-500 to-pink-700 text-white min-h-screen flex flex-col items-center justify-center p-6 relative">
       <h1 class="text-4xl font-bold mb-6 text-pink-300">Real-Time Object Detection</h1>
       <p class="text-lg mb-8 text-center">
-        This tool will allow you to upload a video and perform real-time object detection using a MobileNet model via WebAssembly.
+        This tool will allow you to upload a video and perform real-time object detection using a COCO-SSD model via WebAssembly.
       </p>
       
-      <div class="upload-container" style="display: flex; flex-direction: column; align-items: center;">
+      <div class="upload-container" style="display: flex; flex-direction: column; align-items: center; position: relative;">
         <input type="file" accept="video/*" class="mb-4 p-2 rounded" />
         <button class="button">Upload Video</button>
-        <div id="videoContainer" class="video-container" style="margin-top: 20px; width: 100%; max-width: 600px;">
-          <video id="videoElement" controls style="width: 100%;"></video>
+        <div id="videoContainer" class="video-container">
+          <video id="videoElement" controls></video>
+          <canvas id="overlayCanvas"></canvas>
         </div>
       </div>
 
@@ -111,4 +151,3 @@
     </div>
   </body>
 </html>
-</write_to_file>
