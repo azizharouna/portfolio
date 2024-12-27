@@ -1,2 +1,4 @@
 projects
 ui_upgrade_options
+node_modules
+functions/api/node_modules
