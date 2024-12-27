@@ -3,3 +3,4 @@ ui_upgrade_options
 node_modules
 functions/api/node_modules
 test/
+cloud_architecture_requirements.md
