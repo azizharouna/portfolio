@@ -8,38 +8,38 @@ body {
 
 /* Primary color scheme */
 .bg-primary {
-  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient for modern touch */
+  background: linear-gradient(135deg, #1a202c, #2d3748); /* Dark gradient */
 }
 
 .text-primary-foreground {
-  color: #ffffff; /* White */
+  color: #edf2f7; /* Light gray */
 }
 
 /* Secondary color scheme */
 .bg-secondary {
-    background-color: #5a6268; /* Updated to a darker grey for better contrast */
+    background-color: #4a5568; /* Darker grey */
 }
 
 .text-secondary-foreground {
-    color: #ffffff; /* White */
+    color: #e2e8f0; /* Light gray */
 }
 
 /* Link styles */
 a {
   text-decoration: none;
-  color: #007bff; /* Updated to match the primary color */
+  color: #90cdf4; /* Light blue */
   transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
 a:hover {
   text-decoration: underline;
-  color: #0056b3; /* Darker shade for hover effect */
+  color: #63b3ed; /* Darker shade for hover effect */
 }
 
 /* Button styles */
 .button {
-  background-color: #007bff; /* Primary color */
-  color: #ffffff; /* White text */
+  background-color: #63b3ed; /* Light blue */
+  color: #1a202c; /* Dark text */
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
@@ -49,7 +49,7 @@ a:hover {
 }
 
 .button:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
+  background-color: #4299e1; /* Darker shade for hover effect */
   transform: translateY(-2px); /* Lift effect on hover */
 }
 
